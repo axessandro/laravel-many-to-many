@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Archive')
+@section('title', 'Projects list')
 @section('content')
     <div class="bg-dark">
         @if (session('message'))
@@ -31,12 +31,20 @@
                             @endif
                         </td>
                         <td>{{ $project->name }}</td>
-                        <td>{{ $project->type ? $project->type->name : '' }}</td>
+                        <td>
+                            @if ($project->type)
+                                <span class="bg-white text-dark p-1 rounded-3">
+                                    {{ $project->type->name }}
+                                </span>
+                            @else
+                                <span>Not assigned</span>
+                            @endif
+                        </td>
                         <td>
                             @forelse ($project->technologies as $technology)
                                 <span class="bg-danger text-white p-1 rounded-3">{{ $technology->name }}</span>
                             @empty
-                                <span>technologies not assigned</span>
+                                <span>Not assigned</span>
                             @endforelse
                         </td>
                         {{-- actions --}}
