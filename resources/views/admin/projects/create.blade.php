@@ -57,6 +57,19 @@
                 </div>
                 {{-- /types --}}
 
+                {{-- technologies --}}
+                <div class="form-group mb-4">
+                    <p>Technologies:</p>
+                    @foreach ($technologies as $technology)
+                        <div class="form-check">
+                            <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id }}"
+                                class="form-check-input" value="{{ $technology->id }}">
+                            <label for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
+                        </div>
+                    @endforeach
+                </div>
+                {{-- /technologies --}}
+
                 {{-- description --}}
                 <div class="form-group mb-4">
                     <label for="description">Description:</label>

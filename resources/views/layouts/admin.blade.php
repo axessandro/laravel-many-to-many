@@ -35,6 +35,9 @@
                             Dashboard
                         </a>
                     </li>
+                    <hr>
+
+                    <h3 class="pt-3">Projects</h3>
                     <li>
                         <a href="{{ route('admin.projects.index') }}"
                             class="nav-link text-white
@@ -49,9 +52,21 @@
                             class="nav-link text-white
                         {{ Route::currentRouteName() === 'admin.projects.create' ? 'bg-danger' : '' }}">
                             <i class="fa-solid fa-plus"></i>
-                            New project
+                            New
                         </a>
                     </li>
+                    <hr>
+                    <h3 class="pt-3">Technologies</h3>
+                    <li>
+                        <a href="{{ route('admin.projects.index') }}"
+                            class="nav-link text-white
+                        {{ Route::currentRouteName() === 'admin.projects.index' ? 'bg-danger' : '' }}
+                        {{ Route::currentRouteName() === 'admin.projects.show' ? 'bg-danger' : '' }}">
+                            <i class="fa-solid fa-box-archive text-light"></i>
+                            Archive
+                        </a>
+                    </li>
+                    <hr>
                 </ul>
             </div>
         </div>
