@@ -42,11 +42,13 @@
                 {{-- technologies --}}
                 <li class="list-group-item d-flex justify-content-between">
                     <span class="text-secondary">Technologies:</span>
-                    @forelse ($project->technologies as $technology)
-                        <span class="bg-danger text-white p-2 mr-1">{{ $technology->name }}</span>
-                    @empty
-                        <span>technologies not assigned</span>
-                    @endforelse
+                    <div>
+                        @forelse ($project->technologies as $technology)
+                            <span class="bg-danger text-white p-2 mr-1">{{ $technology->name }}</span>
+                        @empty
+                            <span>technologies not assigned</span>
+                        @endforelse
+                    </div>
                 </li>
                 {{-- technologies --}}
 

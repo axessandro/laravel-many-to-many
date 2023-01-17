@@ -2,7 +2,6 @@
 @section('title', 'Archive')
 @section('content')
     <div class="bg-dark">
-
         @if (session('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
@@ -15,6 +14,7 @@
                     <th>Img</th>
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Technologies</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -32,6 +32,13 @@
                         </td>
                         <td>{{ $project->name }}</td>
                         <td>{{ $project->type ? $project->type->name : '' }}</td>
+                        <td>
+                            @forelse ($project->technologies as $technology)
+                                <span class="bg-danger text-white p-1 rounded-3">{{ $technology->name }}</span>
+                            @empty
+                                <span>technologies not assigned</span>
+                            @endforelse
+                        </td>
                         {{-- actions --}}
                         <td>
                             <div class="d-flex">
