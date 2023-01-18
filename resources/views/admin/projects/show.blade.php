@@ -44,7 +44,7 @@
                     <span class="text-secondary">Technologies:</span>
                     <div>
                         @forelse ($project->technologies as $technology)
-                            <span class="bg-danger text-white p-2 mr-1">{{ $technology->name }}</span>
+                            <span class="bg-danger text-white mr-1 p-1 rounded-3">{{ $technology->name }}</span>
                         @empty
                             <span>technologies not assigned</span>
                         @endforelse
